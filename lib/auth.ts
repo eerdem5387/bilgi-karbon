@@ -3,6 +3,14 @@ import Credentials from "next-auth/providers/credentials"
 import { prisma } from "./prisma"
 import bcrypt from "bcryptjs"
 
+// Production'da NEXTAUTH_SECRET zorunlu (Vercel'de 500 hatası önlenir)
+const secret = process.env.NEXTAUTH_SECRET || process.env.AUTH_SECRET
+if (process.env.NODE_ENV === "production" && !secret) {
+  console.error(
+    "[NextAuth] NEXTAUTH_SECRET veya AUTH_SECRET tanımlı değil. Vercel → Settings → Environment Variables ekleyin."
+  )
+}
+
 export const { handlers, auth, signIn, signOut } = NextAuth({
   providers: [
     Credentials({
@@ -69,7 +77,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       return session
     }
   },
-  secret: process.env.NEXTAUTH_SECRET || process.env.AUTH_SECRET,
+  secret,
   debug: process.env.NODE_ENV === 'development',
   trustHost: true, // Vercel için gerekli
 })
