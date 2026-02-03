@@ -33,7 +33,7 @@ export default function HomePage() {
             {/* Başvuru Başlığı */}
             <div className="text-center">
               <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
-                Bursluluk Sınavı Başvuru Sistemi
+                Bilgi ve İletişim Formu
               </h1>
             </div>
           </div>
@@ -49,7 +49,7 @@ export default function HomePage() {
           className="text-center mb-12"
         >
           <p className="text-lg text-gray-600">
-            Lütfen başvuru yapmak istediğiniz şubeyi seçiniz
+            Bilgi almak veya iletişime geçmek istediğiniz şubeyi seçiniz
           </p>
         </motion.div>
 
@@ -80,7 +80,7 @@ export default function HomePage() {
                     RİZE
                   </h4>
                   <p className="text-sm md:text-base text-gray-600 mb-4 md:mb-6">
-                    Rize şubemize bursluluk sınavı başvurusu yapmak için tıklayın
+                    Rize şubemiz için bilgi ve iletişim formunu doldurmak için tıklayın
                   </p>
                   <div className="inline-flex items-center text-green-600 font-semibold text-sm md:text-base group-hover:gap-3 gap-2 transition-all">
                     <span>Başvuru</span>
@@ -119,7 +119,7 @@ export default function HomePage() {
                     TRABZON
                   </h4>
                   <p className="text-sm md:text-base text-gray-600 mb-4 md:mb-6">
-                    Trabzon şubemize bursluluk sınavı başvurusu yapmak için tıklayın
+                    Trabzon şubemiz için bilgi ve iletişim formunu doldurmak için tıklayın
                   </p>
                   <div className="inline-flex items-center text-blue-600 font-semibold text-sm md:text-base group-hover:gap-3 gap-2 transition-all">
                     <span>Başvuru</span>
@@ -152,7 +152,7 @@ export default function HomePage() {
                 <ul className="text-sm text-gray-600 space-y-2">
                   <li className="flex items-start">
                     <span className="text-indigo-500 mr-2">•</span>
-                    <span>Başvurunuzu yapmak istediğiniz şubeyi dikkatle seçiniz</span>
+                    <span>Formu doldurmak istediğiniz şubeyi dikkatle seçiniz</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-indigo-500 mr-2">•</span>
@@ -160,7 +160,7 @@ export default function HomePage() {
                   </li>
                   <li className="flex items-start">
                     <span className="text-indigo-500 mr-2">•</span>
-                    <span>Başvuru formunu eksiksiz doldurunuz</span>
+                    <span>Tüm alanları eksiksiz doldurunuz</span>
                   </li>
                 </ul>
               </div>

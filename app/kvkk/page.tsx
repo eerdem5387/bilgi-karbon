@@ -74,7 +74,7 @@ export default function KVKKPage() {
               <h2 className="text-2xl font-bold text-gray-900 mb-4">3. Kişisel Verilerin İşlenme Amaçları</h2>
               <p>Kişisel verileriniz aşağıdaki amaçlarla işlenmektedir:</p>
               <ul className="list-disc pl-6 space-y-2 mt-4">
-                <li>Bursluluk sınavı başvurularının alınması ve değerlendirilmesi</li>
+                <li>Bilgi ve iletişim formu başvurularının alınması ve değerlendirilmesi</li>
                 <li>Başvuru süreçlerinin yönetilmesi</li>
                 <li>Başvuru sahipleri ile iletişim kurulması</li>
                 <li>Yasal yükümlülüklerin yerine getirilmesi</li>

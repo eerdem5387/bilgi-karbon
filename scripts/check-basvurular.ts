@@ -36,9 +36,10 @@ async function main() {
       orderBy: { createdAt: 'desc' },
       select: {
         id: true,
-        ogrenciAdSoyad: true,
-        ogrenciTc: true,
+        adSoyad: true,
+        sinif: true,
         okul: true,
+        telefon: true,
         kurumSube: true,
         createdAt: true
       }
@@ -46,9 +47,10 @@ async function main() {
     
     console.log('📋 Son 5 Başvuru Örneği:\n')
     ornekBasvurular.forEach((b, index) => {
-      console.log(`${index + 1}. ${b.ogrenciAdSoyad}`)
-      console.log(`   TC: ${b.ogrenciTc}`)
+      console.log(`${index + 1}. ${b.adSoyad}`)
+      console.log(`   Sınıf: ${b.sinif}`)
       console.log(`   Okul: ${b.okul}`)
+      console.log(`   Telefon: ${b.telefon}`)
       console.log(`   Kurum Şube: ${b.kurumSube}`)
       console.log(`   Tarih: ${b.createdAt}\n`)
     })
@@ -63,7 +65,7 @@ async function main() {
       },
       select: {
         id: true,
-        ogrenciAdSoyad: true,
+        adSoyad: true,
         okul: true,
         kurumSube: true
       },
@@ -72,7 +74,7 @@ async function main() {
     
     console.log(`\n📊 Okul adında "TRABZON" geçen başvurular: ${trabzonOkulBasvurular.length} (ilk 5 gösteriliyor)`)
     trabzonOkulBasvurular.forEach((b, index) => {
-      console.log(`${index + 1}. ${b.ogrenciAdSoyad} - ${b.okul} - Kurum: ${b.kurumSube}`)
+      console.log(`${index + 1}. ${b.adSoyad} - ${b.okul} - Kurum: ${b.kurumSube}`)
     })
     
   } catch (error) {
