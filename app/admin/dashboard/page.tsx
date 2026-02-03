@@ -49,7 +49,7 @@ export default function AdminDashboard() {
       const response = await fetch('/api/admin/basvurular')
 
       if (!response.ok) {
-        throw new Error('Başvurular yüklenemedi')
+        throw new Error('Kayıtlar yüklenemedi')
       }
 
       const data = await response.json()
@@ -88,7 +88,7 @@ export default function AdminDashboard() {
       const a = document.createElement('a')
       a.href = url
       const filterSuffix = filterTarihBaslangic || filterTarihBitis || filterSinif || filterOkul ? '-filtrelenmis' : ''
-      a.download = `bilgi-formu-basvurular${filterSuffix}-${new Date().toISOString().split('T')[0]}.xlsx`
+      a.download = `bilgi-formu-kayitlari${filterSuffix}-${new Date().toISOString().split('T')[0]}.xlsx`
       document.body.appendChild(a)
       a.click()
       window.URL.revokeObjectURL(url)
@@ -198,7 +198,7 @@ export default function AdminDashboard() {
                 </svg>
               </div>
               <div className="ml-4">
-                <p className="text-sm font-medium text-gray-600">Toplam Başvuru</p>
+                <p className="text-sm font-medium text-gray-600">Toplam Kayıt</p>
                 <p className="text-2xl font-bold text-gray-900">{basvurular.length}</p>
               </div>
             </div>
@@ -217,7 +217,7 @@ export default function AdminDashboard() {
                 </svg>
               </div>
               <div className="ml-4">
-                <p className="text-sm font-medium text-gray-600">Bugünkü Başvurular</p>
+                <p className="text-sm font-medium text-gray-600">Bugünkü Kayıtlar</p>
                 <p className="text-2xl font-bold text-gray-900">
                   {basvurular.filter(b => new Date(b.createdAt).toDateString() === new Date().toDateString()).length}
                 </p>
@@ -359,7 +359,7 @@ export default function AdminDashboard() {
                 {filteredBasvurular.length === 0 ? (
                   <tr>
                     <td colSpan={6} className="px-6 py-12 text-center text-gray-500">
-                      {basvurular.length === 0 ? 'Henüz başvuru bulunmamaktadır.' : 'Arama sonucu bulunamadı.'}
+                      {basvurular.length === 0 ? 'Henüz kayıt bulunmamaktadır.' : 'Arama sonucu bulunamadı.'}
                     </td>
                   </tr>
                 ) : (
@@ -407,7 +407,7 @@ export default function AdminDashboard() {
             className="bg-white rounded-lg shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto"
           >
             <div className="bg-gradient-to-r from-indigo-600 to-purple-600 px-6 py-4 flex justify-between items-center sticky top-0">
-              <h2 className="text-xl font-bold text-white">Başvuru Detayı</h2>
+              <h2 className="text-xl font-bold text-white">Kayıt Detayı</h2>
               <button
                 onClick={() => setSelectedBasvuru(null)}
                 className="text-white hover:text-gray-200 transition duration-200"
@@ -440,7 +440,7 @@ export default function AdminDashboard() {
                 <p className="font-medium text-indigo-700">{selectedBasvuru.kurumSube}</p>
               </div>
               <div>
-                <p className="text-sm text-gray-600">Başvuru Tarihi</p>
+                <p className="text-sm text-gray-600">Kayıt Tarihi</p>
                 <p className="font-medium text-gray-900">
                   {new Date(selectedBasvuru.createdAt).toLocaleString('tr-TR')}
                 </p>
